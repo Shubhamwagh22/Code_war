@@ -1,0 +1,25 @@
+def armstrongNumber(n):
+   i = 0
+   while n > 0:
+      n //= 10
+      i += 1
+   return i
+
+def sum(n):
+   i = armstrongNumber(n)
+   s = 0
+   while n > 0:
+      digit = n%10
+      n //= 10
+      s += pow(digit,i)
+   return s
+
+
+num = int(input('Enter your number : '))
+
+s = sum(num)
+
+if s == num:
+   print('Yes')
+else:
+   print('No')
